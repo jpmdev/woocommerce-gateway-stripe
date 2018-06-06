@@ -11,6 +11,9 @@ if [ $1 == 'before' ]; then
 	# install php-coveralls to send coverage info
 	#composer init --require=satooshi/php-coveralls:0.7.0 -n
 	#composer install --no-interaction
+	phpenv config-rm xdebug.ini
+	composer global require "phpunit/phpunit=6.*"
+	composer install
 
 	#install npm to update node modules for JS tests
 	npm install
